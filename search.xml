@@ -6,7 +6,13 @@
     <entry>
       <title><![CDATA[Git远程操作详解]]></title>
       <url>https://github.com/x-future/x-future.github.io/2016/12/04/Git%20command/</url>
-      <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。<br><a id="more"></a><br>    git clone<br>    git remote<br>    git fetch<br>    git pull<br>    git push<br>本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。<br>git</p>
+      <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br><a id="more"></a><br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。</p>
+<pre><code>git clone
+git remote
+git fetch
+git pull
+git push
+</code></pre><p>本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。<br>git</p>
 <h2 id="一、git-clone"><a href="#一、git-clone" class="headerlink" title="一、git clone"></a>一、git clone</h2><p>远程操作的第一步，通常是从远程主机克隆一个版本库，这时就要用到git clone命令。</p>
 <pre><code>$ git clone &lt;版本库的网址&gt;
 比如，克隆jQuery的版本库。
@@ -165,8 +171,8 @@ $ git push origin --tags
     <entry>
       <title><![CDATA[Python解释器]]></title>
       <url>https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。</p>
-<p>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。<br><a id="more"></a><br>CPython</p>
+      <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。<br><a id="more"></a><br>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
+<p>CPython</p>
 <p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
 <p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
 <p>IPython</p>
@@ -205,16 +211,16 @@ $ git push origin --tags
   
     
     <entry>
+      <title><![CDATA[读书]]></title>
+      <url>https://github.com/x-future/x-future.github.io/reading/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>https://github.com/x-future/x-future.github.io/about/index.html</url>
       <content type="html"><![CDATA[<p>大家好，我是Jack。欢迎来到我的个人技术博客。</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[读书]]></title>
-      <url>https://github.com/x-future/x-future.github.io/reading/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
