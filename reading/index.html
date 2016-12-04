@@ -254,7 +254,7 @@
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="card-cover-image activator" src="http://img3.douban.com/lpic/s23139051.jpg">
                                 </div>
-                                <div class="card-content blue-link-context">
+                                <div class="card-content red-link-context">
                                     <span class="card-title truncate activator grey-text text-darken-4">众妙之门：网站UI设计之道
                                     </span>
                                     <p>评分: 7
@@ -280,7 +280,7 @@
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="card-cover-image activator" src="http://img5.douban.com/lpic/s11337059.jpg">
                                 </div>
-                                <div class="card-content blue-link-context">
+                                <div class="card-content red-link-context">
                                     <span class="card-title truncate activator grey-text text-darken-4">JavaScript模式
                                     </span>
                                     <p>评分: 8.5
@@ -306,7 +306,7 @@
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="card-cover-image activator" src="http://img3.douban.com/lpic/s11373174.jpg">
                                 </div>
-                                <div class="card-content blue-link-context">
+                                <div class="card-content red-link-context">
                                     <span class="card-title truncate activator grey-text text-darken-4">JavaScript语言精粹
                                     </span>
                                     <p>评分: 9.5
@@ -337,7 +337,7 @@
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="card-cover-image activator" src="http://img4.douban.com/lpic/s27881888.jpg">
                                 </div>
-                                <div class="card-content blue-link-context">
+                                <div class="card-content red-link-context">
                                     <span class="card-title truncate activator grey-text text-darken-4">网络游戏核心技术与实战
                                     </span>
                                     <p>评分: ???
@@ -368,7 +368,7 @@
                                 <div class="card-image waves-effect waves-block waves-light">
                                     <img class="card-cover-image activator" src="http://img4.douban.com/lpic/s1113106.jpg">
                                 </div>
-                                <div class="card-content blue-link-context">
+                                <div class="card-content red-link-context">
                                     <span class="card-title truncate activator grey-text text-darken-4">计算机程序的构造和解释
                                     </span>
                                     <p>评分: ???
@@ -477,7 +477,7 @@
     </div>
     
 
-    <div class="footer-copyright blue-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             ©2016 hubait.com,赣ICP备15007980号, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -637,7 +637,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword blue lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -659,7 +659,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword blue lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"

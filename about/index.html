@@ -262,7 +262,7 @@
                 <section class="about-me">
                     <h1 class="deep-orange-text">
                         <i class="fa fa-street-view"></i>关于</h1>
-                    <div class="entry blue-link-context">
+                    <div class="entry red-link-context">
                         <p>大家好，我是Jack。欢迎来到我的个人技术博客。</p>
 
                     </div>
@@ -380,7 +380,7 @@
                             
                                 <div class="project-item col m6">
                                     <div class="">
-                                        <div class="card medium blue-link-context">
+                                        <div class="card medium red-link-context">
                                             <div class="card-image">
                                                 <img class="card-cover-image" src="https://d13yacurqjgara.cloudfront.net/users/138819/screenshots/2578899/dribbble_800x600_01_1x.png">
                                                 <span class="card-title">你的项目A</span>
@@ -404,7 +404,7 @@
                             
                                 <div class="project-item col m6">
                                     <div class="">
-                                        <div class="card medium blue-link-context">
+                                        <div class="card medium red-link-context">
                                             <div class="card-image">
                                                 <img class="card-cover-image" src="https://d13yacurqjgara.cloudfront.net/users/4094/screenshots/2578885/time-lords-drib_1x.jpg">
                                                 <span class="card-title">你的作品B</span>
@@ -595,7 +595,7 @@
     </div>
     
 
-    <div class="footer-copyright blue-link-context">
+    <div class="footer-copyright red-link-context">
         <div class="container">
             ©2016 hubait.com,赣ICP备15007980号, All rights reserved.
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
@@ -755,7 +755,7 @@
                             if (isMatch) {
                                 keywords.forEach(function(keyword) {
                                     var regS = new RegExp(keyword, "gi");
-                                    data_title = data_title.replace(regS, "<span class=\"search-keyword blue lighten-2\">" + keyword + "</span>");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                 });
 
                                 str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
@@ -777,7 +777,7 @@
                                     // highlight all keywords
                                     keywords.forEach(function(keyword) {
                                         var regS = new RegExp(keyword, "gi");
-                                        match_content = match_content.replace(regS, "<span class=\"search-keyword blue lighten-2\">" + keyword + "</span>");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
                                     });
 
                                     str += "<p class=\"search-result\">..." + match_content + "...</p>"
