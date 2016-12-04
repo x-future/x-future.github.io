@@ -15,9 +15,9 @@
 <p>反过来，把变量内容从序列化的对象重新读到内存里称之为反序列化，即unpickling。</p>
 <h2 id="PICKLE"><a href="#PICKLE" class="headerlink" title="PICKLE"></a>PICKLE</h2><p>Python提供两个模块来实现序列化：cPickle和pickle。这两个模块功能是一样的，区别在于cPickle是C语言写的，速度快，pickle是纯Python写的，速度慢，跟cStringIO和StringIO一个道理。用的时候，先尝试导入cPickle，如果失败，再导入pickle：</p>
 <pre><code>try:
-import cPickle as pickle
+    import cPickle as pickle
 except ImportError:
-import pickle
+    import pickle
 首先，我们尝试把一个对象序列化并写入文件：
 
 &gt;&gt;&gt; d = dict(name=&apos;Bob&apos;, age=20, score=88)
@@ -62,10 +62,10 @@ null    None
 <pre><code>import json
 
 class Student(object):
-def __init__(self, name, age, score):
-self.name = name
-self.age = age
-self.score = score
+    def __init__(self, name, age, score):
+    self.name = name
+    self.age = age
+    self.score = score
 
 s = Student(&apos;Bob&apos;, 20, 88)
 print(json.dumps(s))
@@ -81,11 +81,11 @@ TypeError: &lt;__main__.Student object at 0x10aabef50&gt; is not JSON serializab
 <p>这些可选参数就是让我们来定制JSON序列化。前面的代码之所以无法把Student类实例序列化为JSON，是因为默认情况下，dumps()方法不知道如何将Student实例变为一个JSON的{}对象。</p>
 <p>可选参数default就是把任意一个对象变成一个可序列为JSON的对象，我们只需要为Student专门写一个转换函数，再把函数传进去即可：</p>
 <pre><code>def student2dict(std):
-return {
-&apos;name&apos;: std.name,
-&apos;age&apos;: std.age,
-&apos;score&apos;: std.score
-}
+    return {
+    &apos;name&apos;: std.name,
+    &apos;age&apos;: std.age,
+    &apos;score&apos;: std.score
+    }
 
 print(json.dumps(s, default=student2dict))
 </code></pre><p>这样，Student实例首先被student2dict()函数转换成dict，然后再被顺利序列化为JSON。</p>
@@ -94,7 +94,7 @@ print(json.dumps(s, default=student2dict))
 </code></pre><p>因为通常class的实例都有一个<strong>dict</strong>属性，它就是一个dict，用来存储实例变量。也有少数例外，比如定义了<strong>slots</strong>的class。</p>
 <p>同样的道理，如果我们要把JSON反序列化为一个Student对象实例，loads()方法首先转换出一个dict对象，然后，我们传入的object_hook函数负责把dict转换为Student实例：</p>
 <pre><code>def dict2student(d):
-return Student(d[&apos;name&apos;], d[&apos;age&apos;], d[&apos;score&apos;])
+    return Student(d[&apos;name&apos;], d[&apos;age&apos;], d[&apos;score&apos;])
 
 json_str = &apos;{&quot;age&quot;: 20, &quot;score&quot;: 88, &quot;name&quot;: &quot;Bob&quot;}&apos;
 print(json.loads(json_str, object_hook=dict2student))
@@ -105,6 +105,30 @@ print(json.loads(json_str, object_hook=dict2student))
 <p>小结</p>
 <p>Python语言特定的序列化模块是pickle，但如果要把序列化搞得更通用、更符合Web标准，就可以使用json模块。</p>
 <p>json模块的dumps()和loads()函数是定义得非常好的接口的典范。当我们使用时，只需要传入一个必须的参数。但是，当默认的序列化或反序列机制不满足我们的要求时，我们又可以传入更多的参数来定制序列化或反序列化的规则，既做到了接口简单易用，又做到了充分的扩展性和灵活性。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Python解释器]]></title>
+      <url>https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。<br><a id="more"></a><br>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
+<p>CPython</p>
+<p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
+<p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
+<p>IPython</p>
+<p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
+<p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p>
+<p>PyPy</p>
+<p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p>
+<p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p>
+<p>Jython</p>
+<p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p>
+<p>IronPython</p>
+<p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
+<p>小结</p>
+<p>Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
+<p>本教程的所有代码只确保在CPython 2.7版本下运行。请务必在本地安装CPython（也就是从Python官方网站下载的安装程序）。</p>
+<p>此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。</p>
 ]]></content>
     </entry>
     
@@ -270,30 +294,6 @@ $ git push --force origin
 
 $ git push origin --tags
 </code></pre><p>（完）<br>文档信息<br>版权声明：转载-阮一峰博客<br>发表日期： 2014年6月12日</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Python解释器]]></title>
-      <url>https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。<br><a id="more"></a><br>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
-<p>CPython</p>
-<p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
-<p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
-<p>IPython</p>
-<p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
-<p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p>
-<p>PyPy</p>
-<p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p>
-<p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p>
-<p>Jython</p>
-<p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p>
-<p>IronPython</p>
-<p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
-<p>小结</p>
-<p>Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
-<p>本教程的所有代码只确保在CPython 2.7版本下运行。请务必在本地安装CPython（也就是从Python官方网站下载的安装程序）。</p>
-<p>此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。</p>
 ]]></content>
     </entry>
     
