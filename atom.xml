@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/x-future/x-future.github.io/"/>
-  <updated>2016-12-04T13:54:03.714Z</updated>
+  <updated>2016-12-04T13:56:36.467Z</updated>
   <id>https://github.com/x-future/x-future.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     <id>https://github.com/x-future/x-future.github.io/2016/12/04/Python序列化/</id>
     <published>2016-12-04T13:39:20.000Z</published>
-    <updated>2016-12-04T13:54:03.714Z</updated>
+    <updated>2016-12-04T13:56:36.467Z</updated>
     
     <content type="html"><![CDATA[<h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><p>在程序运行的过程中，所有的变量都是在内存中，比如，定义一个dict：</p>
 <pre><code>d = dict(name=&apos;Bob&apos;, age=20, score=88)
@@ -106,7 +106,8 @@ return {
 print(json.dumps(s, default=student2dict))
 </code></pre><p>这样，Student实例首先被student2dict()函数转换成dict，然后再被顺利序列化为JSON。</p>
 <p>不过，下次如果遇到一个Teacher类的实例，照样无法序列化为JSON。我们可以偷个懒，把任意class的实例变为dict：</p>
-<p>print(json.dumps(s, default=lambda obj: obj.<strong>dict</strong>))<br>因为通常class的实例都有一个<strong>dict</strong>属性，它就是一个dict，用来存储实例变量。也有少数例外，比如定义了<strong>slots</strong>的class。</p>
+<pre><code>print(json.dumps(s, default=lambda obj: obj.__dict__))
+</code></pre><p>因为通常class的实例都有一个<strong>dict</strong>属性，它就是一个dict，用来存储实例变量。也有少数例外，比如定义了<strong>slots</strong>的class。</p>
 <p>同样的道理，如果我们要把JSON反序列化为一个Student对象实例，loads()方法首先转换出一个dict对象，然后，我们传入的object_hook函数负责把dict转换为Student实例：</p>
 <pre><code>def dict2student(d):
 return Student(d[&apos;name&apos;], d[&apos;age&apos;], d[&apos;score&apos;])
