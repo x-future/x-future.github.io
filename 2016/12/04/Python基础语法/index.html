@@ -7,15 +7,16 @@
 
     
 
-    <title>Python基础一 | </title>
+    <title>Python解释器 | </title>
     <meta name="author" content="Xu xiaomin">
     
-    <meta name="description" content="Python 特点1.易于学习：Python有相对较少的关键字，结构简单，和一个明确定义的语法，学习起来更加简单。2.易于阅读：Python代码定义的更清晰。3.易于维护：Python的成功在于它的源代码是相当容易维护的。4.一个广泛的标准库：Python的最大的优势之一是丰富的库，跨平台的，在UN">
+    <meta name="description" content="当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。
+由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="Python基础一"/>
+    <meta property="og:title" content="Python解释器"/>
     <meta property="og:site_name" content="X-future"/>
 
     
@@ -171,8 +172,8 @@
             
 
             <li class="collapse-level-0" collapse-level="0">
-                <a class="no-padding" href="/categories/python/">
-                    python <span class="right">1 篇</span></a>
+                <a class="no-padding" href="/categories/python基础/">
+                    python基础 <span class="right">1 篇</span></a>
                 </a>
             </li>
 
@@ -208,7 +209,7 @@
             
     
     
-    <a class="breadcrumb" href="/categories/python/">python</a>
+    <a class="breadcrumb" href="/categories/python基础/">python基础</a>
 
 
         
@@ -225,12 +226,12 @@
             <div class="article-title">
                 
     
-        <h1>Python基础一</h1>
+        <h1>Python解释器</h1>
     
 
 
             </div>
-            <time class="blue-link-context" datetime="2016-11-27T18:39:20.000Z"><a href="/2016/11/28/Python/">2016-11-28</a></time>
+            <time class="blue-link-context" datetime="2016-12-03T18:39:20.000Z"><a href="/2016/12/04/Python基础语法/">2016-12-04</a></time>
 
             
     <div class="tags-row">
@@ -246,7 +247,25 @@
 
 
             <div class="entry blue-link-context">
-                <p>Python 特点<br>1.易于学习：Python有相对较少的关键字，结构简单，和一个明确定义的语法，学习起来更加简单。<br>2.易于阅读：Python代码定义的更清晰。<br>3.易于维护：Python的成功在于它的源代码是相当容易维护的。<br>4.一个广泛的标准库：Python的最大的优势之一是丰富的库，跨平台的，在UNIX，Windows和Macintosh兼容很好。<br>5.互动模式：互动模式的支持，您可以从终端输入执行代码并获得结果的语言，互动的测试和调试代码片断。<br>6.可移植：基于其开放源代码的特性，Python已经被移植（也就是使其工作）到许多平台。<br>7.可扩展：如果你需要一段运行很快的关键代码，或者是想要编写一些不愿开放的算法，你可以使用C或C++完成那部分程序，然后从你的Python程序中调用。<br>8.数据库：Python提供所有主要的商业数据库的接口。<br>9.GUI编程：Python支持GUI可以创建和移植到许多系统调用。<br>10.可嵌入: 你可以将Python嵌入到C/C++程序，让你的程序的用户获得”脚本化”的能力。</p>
+                <p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。</p>
+<p>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
+<p>CPython</p>
+<p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
+<p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
+<p>IPython</p>
+<p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
+<p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p>
+<p>PyPy</p>
+<p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p>
+<p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p>
+<p>Jython</p>
+<p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p>
+<p>IronPython</p>
+<p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
+<p>小结</p>
+<p>Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
+<p>本教程的所有代码只确保在CPython 2.7版本下运行。请务必在本地安装CPython（也就是从Python官方网站下载的安装程序）。</p>
+<p>此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。</p>
 
             </div>
         </div>
@@ -260,7 +279,7 @@
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/11/28/Python/" data-title="Python基础一" data-url="https://github.com/x-future/x-future.github.io/2016/11/28/Python/"></div>
+                <div class="ds-thread" data-thread-key="2016/12/04/Python基础语法/" data-title="Python解释器" data-url="https://github.com/x-future/x-future.github.io/2016/12/04/Python基础语法/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));
