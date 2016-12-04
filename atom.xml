@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/x-future/x-future.github.io/"/>
-  <updated>2016-12-04T09:01:37.222Z</updated>
+  <updated>2016-12-04T10:25:23.312Z</updated>
   <id>https://github.com/x-future/x-future.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Git%20command/"/>
     <id>https://github.com/x-future/x-future.github.io/2016/12/04/Git command/</id>
     <published>2016-12-03T18:39:20.000Z</published>
-    <updated>2016-12-04T09:01:37.222Z</updated>
+    <updated>2016-12-04T10:25:23.312Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>作者： 阮一峰<br>日期： 2014年6月12日<br>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。<br>    git clone<br>    git remote<br>    git fetch<br>    git pull<br>    git push<br>本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。<br>git</p>
+    <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>作者： 阮一峰<br>日期： 2014年6月12日<br>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。<br>    git clone<br>    git remote<br>    git fetch<br>    git pull<br>    git push<br>本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。<br>git<br><a id="more"></a></p>
 <h2 id="一、git-clone"><a href="#一、git-clone" class="headerlink" title="一、git clone"></a>一、git clone</h2><p>远程操作的第一步，通常是从远程主机克隆一个版本库，这时就要用到git clone命令。</p>
 <pre><code>$ git clone &lt;版本库的网址&gt;
 比如，克隆jQuery的版本库。
@@ -179,7 +179,7 @@ $ git push origin --tags
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Git远程操作详解&quot;&gt;&lt;a href=&quot;#Git远程操作详解&quot; class=&quot;headerlink&quot; title=&quot;Git远程操作详解&quot;&gt;&lt;/a&gt;Git远程操作详解&lt;/h1&gt;&lt;p&gt;作者： 阮一峰&lt;br&gt;日期： 2014年6月12日&lt;br&gt;Git是目前最流行的版本管
+      &lt;h1 id=&quot;Git远程操作详解&quot;&gt;&lt;a href=&quot;#Git远程操作详解&quot; class=&quot;headerlink&quot; title=&quot;Git远程操作详解&quot;&gt;&lt;/a&gt;Git远程操作详解&lt;/h1&gt;&lt;p&gt;作者： 阮一峰&lt;br&gt;日期： 2014年6月12日&lt;br&gt;Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。&lt;br&gt;Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。&lt;br&gt;    git clone&lt;br&gt;    git remote&lt;br&gt;    git fetch&lt;br&gt;    git pull&lt;br&gt;    git push&lt;br&gt;本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。&lt;br&gt;git&lt;br&gt;
     
     </summary>
     
