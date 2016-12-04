@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/x-future/x-future.github.io/"/>
-  <updated>2016-12-04T10:39:37.341Z</updated>
+  <updated>2016-12-04T10:39:49.493Z</updated>
   <id>https://github.com/x-future/x-future.github.io/</id>
   
   <author>
@@ -16,11 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Python解释器</title>
+    <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>https://github.com/x-future/x-future.github.io/2016/12/04/Python基础语法/</id>
+    <published>2016-12-03T18:39:20.000Z</published>
+    <updated>2016-12-04T10:39:49.493Z</updated>
+    
+    <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。<br><a id="more"></a><br>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
+<p>CPython</p>
+<p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
+<p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
+<p>IPython</p>
+<p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
+<p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p>
+<p>PyPy</p>
+<p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p>
+<p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p>
+<p>Jython</p>
+<p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p>
+<p>IronPython</p>
+<p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
+<p>小结</p>
+<p>Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
+<p>本教程的所有代码只确保在CPython 2.7版本下运行。请务必在本地安装CPython（也就是从Python官方网站下载的安装程序）。</p>
+<p>此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python基础" scheme="https://github.com/x-future/x-future.github.io/categories/python%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="Python解释器" scheme="https://github.com/x-future/x-future.github.io/categories/python%E5%9F%BA%E7%A1%80/Python%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+    
+      <category term="Python" scheme="https://github.com/x-future/x-future.github.io/tags/Python/"/>
+    
+      <category term="Python解释器" scheme="https://github.com/x-future/x-future.github.io/tags/Python%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git远程操作详解</title>
     <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Git%20command/"/>
     <id>https://github.com/x-future/x-future.github.io/2016/12/04/Git command/</id>
     <published>2016-12-03T18:39:20.000Z</published>
-    <updated>2016-12-04T10:39:37.341Z</updated>
+    <updated>2016-12-04T10:49:59.563Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br><a id="more"></a><br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。</p>
 <pre><code>git clone
@@ -194,53 +238,9 @@ $ git push origin --tags
       <category term="Git远程操作详解" scheme="https://github.com/x-future/x-future.github.io/categories/Git-%E5%91%BD%E4%BB%A4/Git%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/"/>
     
     
-      <category term="Git远程操作详解" scheme="https://github.com/x-future/x-future.github.io/tags/Git%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/"/>
-    
       <category term="Git" scheme="https://github.com/x-future/x-future.github.io/tags/Git/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Python解释器</title>
-    <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
-    <id>https://github.com/x-future/x-future.github.io/2016/12/04/Python基础语法/</id>
-    <published>2016-12-03T18:39:20.000Z</published>
-    <updated>2016-12-04T10:39:49.493Z</updated>
-    
-    <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。<br><a id="more"></a><br>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
-<p>CPython</p>
-<p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
-<p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
-<p>IPython</p>
-<p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
-<p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p>
-<p>PyPy</p>
-<p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p>
-<p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p>
-<p>Jython</p>
-<p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p>
-<p>IronPython</p>
-<p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
-<p>小结</p>
-<p>Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
-<p>本教程的所有代码只确保在CPython 2.7版本下运行。请务必在本地安装CPython（也就是从Python官方网站下载的安装程序）。</p>
-<p>此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="python基础" scheme="https://github.com/x-future/x-future.github.io/categories/python%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="Python解释器" scheme="https://github.com/x-future/x-future.github.io/categories/python%E5%9F%BA%E7%A1%80/Python%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
-    
-    
-      <category term="Python" scheme="https://github.com/x-future/x-future.github.io/tags/Python/"/>
-    
-      <category term="Python解释器" scheme="https://github.com/x-future/x-future.github.io/tags/Python%E8%A7%A3%E9%87%8A%E5%99%A8/"/>
+      <category term="Git远程操作详解" scheme="https://github.com/x-future/x-future.github.io/tags/Git%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C%E8%AF%A6%E8%A7%A3/"/>
     
   </entry>
   
