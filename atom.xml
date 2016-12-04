@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/x-future/x-future.github.io/"/>
-  <updated>2016-12-04T10:25:23.312Z</updated>
+  <updated>2016-12-04T10:27:42.657Z</updated>
   <id>https://github.com/x-future/x-future.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Git%20command/"/>
     <id>https://github.com/x-future/x-future.github.io/2016/12/04/Git command/</id>
     <published>2016-12-03T18:39:20.000Z</published>
-    <updated>2016-12-04T10:25:23.312Z</updated>
+    <updated>2016-12-04T10:27:42.657Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>作者： 阮一峰<br>日期： 2014年6月12日<br>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。<br>    git clone<br>    git remote<br>    git fetch<br>    git pull<br>    git push<br>本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。<br>git<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<h1 id="Git远程操作详解"><a href="#Git远程操作详解" class="headerlink" title="Git远程操作详解"></a>Git远程操作详解</h1><p>Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。<br>Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。<br><a id="more"></a><br>    git clone<br>    git remote<br>    git fetch<br>    git pull<br>    git push<br>本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。<br>git</p>
 <h2 id="一、git-clone"><a href="#一、git-clone" class="headerlink" title="一、git clone"></a>一、git clone</h2><p>远程操作的第一步，通常是从远程主机克隆一个版本库，这时就要用到git clone命令。</p>
 <pre><code>$ git clone &lt;版本库的网址&gt;
 比如，克隆jQuery的版本库。
@@ -174,12 +174,12 @@ $ git push --force origin
 最后，git push不会推送标签（tag），除非使用--tags选项。
 
 $ git push origin --tags
-</code></pre><p>（完）<br>文档信息<br>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）<br>发表日期： 2014年6月12日</p>
+</code></pre><p>（完）<br>文档信息<br>版权声明：转载-阮一峰博客<br>发表日期： 2014年6月12日</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Git远程操作详解&quot;&gt;&lt;a href=&quot;#Git远程操作详解&quot; class=&quot;headerlink&quot; title=&quot;Git远程操作详解&quot;&gt;&lt;/a&gt;Git远程操作详解&lt;/h1&gt;&lt;p&gt;作者： 阮一峰&lt;br&gt;日期： 2014年6月12日&lt;br&gt;Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。&lt;br&gt;Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。&lt;br&gt;    git clone&lt;br&gt;    git remote&lt;br&gt;    git fetch&lt;br&gt;    git pull&lt;br&gt;    git push&lt;br&gt;本文针对初级用户，从最简单的讲起，但是需要读者对Git的基本用法有所了解。同时，本文覆盖了上面5个命令的几乎所有的常用用法，所以对于熟练用户也有参考价值。&lt;br&gt;git&lt;br&gt;
+      &lt;h1 id=&quot;Git远程操作详解&quot;&gt;&lt;a href=&quot;#Git远程操作详解&quot; class=&quot;headerlink&quot; title=&quot;Git远程操作详解&quot;&gt;&lt;/a&gt;Git远程操作详解&lt;/h1&gt;&lt;p&gt;Git是目前最流行的版本管理系统，学会Git几乎成了开发者的必备技能。&lt;br&gt;Git有很多优势，其中之一就是远程操作非常简便。本文详细介绍5个Git命令，它们的概念和用法，理解了这些内容，你就会完全掌握Git远程操作。&lt;br&gt;
     
     </summary>
     
@@ -199,11 +199,10 @@ $ git push origin --tags
     <link href="https://github.com/x-future/x-future.github.io/2016/12/04/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
     <id>https://github.com/x-future/x-future.github.io/2016/12/04/Python基础语法/</id>
     <published>2016-12-03T18:39:20.000Z</published>
-    <updated>2016-12-04T09:02:19.308Z</updated>
+    <updated>2016-12-04T10:28:00.205Z</updated>
     
     <content type="html"><![CDATA[<p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。</p>
-<p>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
-<p>CPython</p>
+<p>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。<br><a id="more"></a><br>CPython</p>
 <p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
 <p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
 <p>IPython</p>
@@ -225,7 +224,7 @@ $ git push origin --tags
     <summary type="html">
     
       &lt;p&gt;当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。&lt;/p&gt;
-&lt;p&gt;由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释
+&lt;p&gt;由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。&lt;br&gt;
     
     </summary>
     
@@ -245,9 +244,9 @@ $ git push origin --tags
     <link href="https://github.com/x-future/x-future.github.io/2016/11/28/hello-world/"/>
     <id>https://github.com/x-future/x-future.github.io/2016/11/28/hello-world/</id>
     <published>2016-11-27T16:22:45.106Z</published>
-    <updated>2016-11-27T16:22:45.106Z</updated>
+    <updated>2016-12-04T10:28:10.062Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -260,7 +259,7 @@ $ git push origin --tags
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
     
     </summary>
     
