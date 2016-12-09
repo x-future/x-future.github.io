@@ -27,15 +27,17 @@
 <p>关闭数据库连接。</p>
 <h2 id="什么是MySQLdb"><a href="#什么是MySQLdb" class="headerlink" title="什么是MySQLdb?"></a>什么是MySQLdb?</h2><p>MySQLdb 是用于Python链接Mysql数据库的接口，它实现了 Python 数据库 API 规范 V2.0，基于 MySQL C API 上建立的。</p>
 <p>如何安装MySQLdb?<br>为了用DB-API编写MySQL脚本，必须确保已经安装了MySQL。复制以下代码，并执行：</p>
+<blockquote>
 <pre><code>import MySQLdb
-</code></pre><p>如果执行后的输出结果如下所示，意味着你没有安装 MySQLdb 模块：</p>
+</code></pre></blockquote>
+<p>如果执行后的输出结果如下所示，意味着你没有安装 MySQLdb 模块：</p>
 <blockquote>
 <pre><code>Traceback (most recent call last):
   File &quot;test.py&quot;, line 3, in &lt;module&gt;
 import MySQLdb
 ImportError: No module named MySQLdb
-</code></pre><p>安装MySQLdb，请访问 <a href="http://sourceforge.net/projects/mysql-python" target="_blank" rel="external">http://sourceforge.net/projects/mysql-python</a> ，从这里可选择适合您的平台的安装包，分为预编译的二进制文件和源代码安装包。</p>
-</blockquote>
+</code></pre></blockquote>
+<p>安装MySQLdb，请访问 <a href="http://sourceforge.net/projects/mysql-python" target="_blank" rel="external">http://sourceforge.net/projects/mysql-python</a> ，从这里可选择适合您的平台的安装包，分为预编译的二进制文件和源代码安装包。</p>
 <p>如果您选择二进制文件发行版本的话，安装过程基本安装提示即可完成。如果从源代码进行安装的话，则需要切换到MySQLdb发行版本的顶级目录，并键入下列命令:</p>
 <blockquote>
 <pre><code>$ gunzip MySQL-python-1.2.2.tar.gz
@@ -43,9 +45,9 @@ $ tar -xvf MySQL-python-1.2.2.tar
 $ cd MySQL-python-1.2.2
 $ python setup.py build
 $ python setup.py install
-</code></pre><p>注意：请确保您有root权限来安装上述模块。</p>
+</code></pre></blockquote>
+<p>注意：请确保您有root权限来安装上述模块。</p>
 <h2 id="数据库连接"><a href="#数据库连接" class="headerlink" title="数据库连接"></a>数据库连接</h2><p>连接数据库前，请先确认以下事项：</p>
-</blockquote>
 <p>您已经创建了数据库 TESTDB.</p>
 <p>在TESTDB数据库中您已经创建了表 EMPLOYEE</p>
 <p>EMPLOYEE表字段为 FIRST_NAME, LAST_NAME, AGE, SEX 和 INCOME。</p>
@@ -74,9 +76,12 @@ print &quot;Database version : %s &quot; % data
 db.close()
 </code></pre><p>执行以上脚本输出结果如下：</p>
 <pre><code>Database version : 5.0.45
-</code></pre><h2 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h2><p>如果数据库连接存在我们可以使用execute()方法来为数据库创建表，如下所示创建表EMPLOYEE：</p>
-<p>  import MySQLdb</p>
-<pre><code># 打开数据库连接
+</code></pre></blockquote>
+<h2 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h2><p>如果数据库连接存在我们可以使用execute()方法来为数据库创建表，如下所示创建表EMPLOYEE：</p>
+<blockquote>
+<pre><code>import MySQLdb
+
+# 打开数据库连接
 db = MySQLdb.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # 使用cursor()方法获取操作游标 
@@ -97,7 +102,9 @@ cursor.execute(sql)
 
 # 关闭数据库连接
 db.close()
-</code></pre><h2 id="数据库插入操作"><a href="#数据库插入操作" class="headerlink" title="数据库插入操作"></a>数据库插入操作</h2><p>以下实例使用执行 SQL INSERT 语句向表 EMPLOYEE 插入记录：</p>
+</code></pre></blockquote>
+<h2 id="数据库插入操作"><a href="#数据库插入操作" class="headerlink" title="数据库插入操作"></a>数据库插入操作</h2><p>以下实例使用执行 SQL INSERT 语句向表 EMPLOYEE 插入记录：</p>
+<blockquote>
 <pre><code>#!/usr/bin/python
 
 import MySQLdb
@@ -123,9 +130,12 @@ except:
 
 # 关闭数据库连接
 db.close()
-</code></pre><p>以上例子也可以写成如下形式：</p>
-<p>  import MySQLdb</p>
-<pre><code># 打开数据库连接
+</code></pre></blockquote>
+<p>以上例子也可以写成如下形式：</p>
+<blockquote>
+<pre><code> import MySQLdb
+
+# 打开数据库连接
 db = MySQLdb.connect(&quot;localhost&quot;,&quot;testuser&quot;,&quot;test123&quot;,&quot;TESTDB&quot; )
 
 # 使用cursor()方法获取操作游标 
@@ -147,8 +157,9 @@ except:
 
 # 关闭数据库连接
 db.close()
-</code></pre><p>实例：<br>以下代码使用变量向SQL语句中传递参数:</p>
-</blockquote>
+</code></pre></blockquote>
+<p>实例：<br>以下代码使用变量向SQL语句中传递参数:</p>
+<blockquote>
 <pre><code>..................................
 user_id = &quot;test123&quot;
 password = &quot;password&quot;
@@ -156,11 +167,13 @@ password = &quot;password&quot;
 con.execute(&apos;insert into Login values(&quot;%s&quot;, &quot;%s&quot;)&apos; % \
  (user_id, password))
 ..................................
-</code></pre><h2 id="数据库查询操作"><a href="#数据库查询操作" class="headerlink" title="数据库查询操作"></a>数据库查询操作</h2><p>Python查询Mysql使用 fetchone() 方法获取单条数据, 使用fetchall() 方法获取多条数据。</p>
+</code></pre></blockquote>
+<h2 id="数据库查询操作"><a href="#数据库查询操作" class="headerlink" title="数据库查询操作"></a>数据库查询操作</h2><p>Python查询Mysql使用 fetchone() 方法获取单条数据, 使用fetchall() 方法获取多条数据。</p>
 <p>fetchone(): 该方法获取下一个查询结果集。结果集是一个对象</p>
 <p>fetchall():接收全部的返回结果行.</p>
 <p>rowcount: 这是一个只读属性，并返回执行execute()方法后影响的行数。</p>
 <p>实例：<br>查询EMPLOYEE表中salary（工资）字段大于1000的所有数据：</p>
+<blockquote>
 <pre><code>import MySQLdb
 
 # 打开数据库连接
@@ -191,7 +204,8 @@ except:
 
 # 关闭数据库连接
 db.close()
-</code></pre><p>以上脚本执行结果如下：</p>
+</code></pre></blockquote>
+<p>以上脚本执行结果如下：</p>
 <blockquote>
 <pre><code>fname=Mac, lname=Mohan, age=20, sex=M, income=2000
 </code></pre></blockquote>
@@ -560,16 +574,16 @@ $ git push origin --tags
   
     
     <entry>
+      <title><![CDATA[读书]]></title>
+      <url>https://github.com/x-future/x-future.github.io/reading/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>https://github.com/x-future/x-future.github.io/about/index.html</url>
       <content type="html"><![CDATA[<p>大家好，我是Jack。欢迎来到我的个人技术博客。</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[读书]]></title>
-      <url>https://github.com/x-future/x-future.github.io/reading/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
