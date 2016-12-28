@@ -7,15 +7,15 @@
 
     
 
-    <title>Python解释器 | </title>
+    <title>Python自动化运维之邮件模块 | </title>
     <meta name="author" content="Xu xiaomin">
     
-    <meta name="description" content="当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。">
+    <meta name="description" content="发送电子邮件模块smtplib通过python的smtplib模块来实现邮件的发送功能，模拟一个smtp客户端，通过smtp服务器交互来实现邮件发送功能。">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="Python解释器"/>
+    <meta property="og:title" content="Python自动化运维之邮件模块"/>
     <meta property="og:site_name" content="X-future"/>
 
     
@@ -264,7 +264,7 @@
             
     
     
-    <a class="breadcrumb" href="/categories/python基础/">python基础</a><a class="breadcrumb" href="/categories/python基础/Python解释器/">Python解释器</a>
+    <a class="breadcrumb" href="/categories/python自动化运维/">python自动化运维</a><a class="breadcrumb" href="/categories/python自动化运维/Python自动化运维之邮件模块/">Python自动化运维之邮件模块</a>
 
 
         
@@ -281,47 +281,102 @@
             <div class="article-title">
                 
     
-        <h1>Python解释器</h1>
+        <h1>Python自动化运维之邮件模块</h1>
     
 
 
             </div>
-            <time class="blue-link-context" datetime="2016-12-03T18:39:20.000Z"><a href="/2016/12/04/Python基础语法/">2016-12-04</a></time>
+            <time class="blue-link-context" datetime="2016-12-28T02:39:20.000Z"><a href="/2016/12/28/Python发送邮件/">2016-12-28</a></time>
 
             
     <div class="tags-row">
         
             <a href="/tags/Python/" class="chip blue lighten-1">Python</a>
         
-            <a href="/tags/Python解释器/" class="chip blue lighten-1">Python解释器</a>
+            <a href="/tags/Python自动化运维之邮件模块/" class="chip blue lighten-1">Python自动化运维之邮件模块</a>
         
     </div>
 
 
             <div class="toc blue-link-context hide-on-med-and-down">
-    
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#发送电子邮件模块smtplib"><span class="section table-of-contents-text">发送电子邮件模块smtplib</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#smtplib-模块常用的方法和类"><span class="section table-of-contents-text">smtplib 模块常用的方法和类</span></a></li></ol></li></ol>
 </div>
 
 
             <div class="entry blue-link-context">
-                <p>当我们编写Python代码时，我们得到的是一个包含Python代码的以.py为扩展名的文本文件。要运行代码，就需要Python解释器去执行.py文件。<br><a id="more"></a><br>由于整个Python语言从规范到解释器都是开源的，所以理论上，只要水平够高，任何人都可以编写Python解释器来执行Python代码（当然难度很大）。事实上，确实存在多种Python解释器。</p>
-<p>CPython</p>
-<p>当我们从Python官方网站下载并安装好Python 2.7后，我们就直接获得了一个官方版本的解释器：CPython。这个解释器是用C语言开发的，所以叫CPython。在命令行下运行python就是启动CPython解释器。</p>
-<p>CPython是使用最广的Python解释器。教程的所有代码也都在CPython下执行。</p>
-<p>IPython</p>
-<p>IPython是基于CPython之上的一个交互式解释器，也就是说，IPython只是在交互方式上有所增强，但是执行Python代码的功能和CPython是完全一样的。好比很多国产浏览器虽然外观不同，但内核其实都是调用了IE。</p>
-<p>CPython用&gt;&gt;&gt;作为提示符，而IPython用In [序号]:作为提示符。</p>
-<p>PyPy</p>
-<p>PyPy是另一个Python解释器，它的目标是执行速度。PyPy采用JIT技术，对Python代码进行动态编译（注意不是解释），所以可以显著提高Python代码的执行速度。</p>
-<p>绝大部分Python代码都可以在PyPy下运行，但是PyPy和CPython有一些是不同的，这就导致相同的Python代码在两种解释器下执行可能会有不同的结果。如果你的代码要放到PyPy下执行，就需要了解PyPy和CPython的不同点。</p>
-<p>Jython</p>
-<p>Jython是运行在Java平台上的Python解释器，可以直接把Python代码编译成Java字节码执行。</p>
-<p>IronPython</p>
-<p>IronPython和Jython类似，只不过IronPython是运行在微软.Net平台上的Python解释器，可以直接把Python代码编译成.Net的字节码。</p>
-<p>小结</p>
-<p>Python的解释器很多，但使用最广泛的还是CPython。如果要和Java或.Net平台交互，最好的办法不是用Jython或IronPython，而是通过网络调用来交互，确保各程序之间的独立性。</p>
-<p>本教程的所有代码只确保在CPython 2.7版本下运行。请务必在本地安装CPython（也就是从Python官方网站下载的安装程序）。</p>
-<p>此外，教程还内嵌一个IPython的Web版本，用来在浏览器内练习执行一些Python代码。要注意两者功能一样，输入的代码一样，但是提示符有所不同。另外，不是所有代码都能在Web版本的IPython中执行，出于安全原因，很多操作（比如文件操作）是受限的，所以有些代码必须在本地环境执行代码。</p>
+                <h1 id="发送电子邮件模块smtplib"><a href="#发送电子邮件模块smtplib" class="headerlink" title="发送电子邮件模块smtplib"></a>发送电子邮件模块smtplib</h1><p>通过python的smtplib模块来实现邮件的发送功能，模拟一个smtp客户端，通过smtp服务器交互来实现邮件发送功能。<br><a id="more"></a></p>
+<h2 id="smtplib-模块常用的方法和类"><a href="#smtplib-模块常用的方法和类" class="headerlink" title="smtplib 模块常用的方法和类"></a>smtplib 模块常用的方法和类</h2><p>SMTP类定义：smtplib.SMTP([host[,port[,local_hostname[,timeout]]]]),作为SMTP的构造函数，功能是与smtp服务器建立连接，在连接成功后，就可以向服务器发送相关请求，比如登入，校验，发送，退出等。host 参数为smtp主机地址，比如smtp.126.com; port 为连接端口， 默认为25； local_hostname的作用是在本地主机FQDN(完整的域名) 发送HELO/EHLO(用户标识身份指令)，timeout为连接或尝试在多少秒超时。SMTP类具有如下方法：</p>
+<pre><code>1. SMTP.connect([host[,port]])方法， 连接远程smtp主机方法，host为远程主机地址，port 为远程主机smtp端口，默认25，也可以直接使用host:port形式来表示，例如：
+SMTP.connect(&quot;smtp.126.com&quot;, &quot;25&quot;)
+
+2.SMTP.login(user,password)方法，远程smtp主机的校验方法，参数为用户名和密码，如SMTP.login(&quot;test@126.com&quot;, &quot;123456&quot;).
+
+3.SMTP.sendmail(from_addr, to_addrs, msg[,mail_options, rcpt_options])方法，实习邮件的发送功能，参数依次为发件人，发件人，邮件内容，例如：
+    SMTP.sendmail(&quot;test@126.com&quot;,&quot;test@qq.com&quot;,body)
+    其中body内容定义如下：
+    &quot;&quot;&quot;From: test@126.com
+    TO: test@qq.com
+    Subject: test mail
+    test mail body&quot;&quot;&quot;
+4.SMTP.starttls([keyfile[,certfile]])方法， 启用TLS模式，所有SMTP指令都将加密输出，例如使用gmail的smtp服务时需要启动此项才能正常发送邮件，如：SMTP.starttls()
+5.SMTP.quit()方法，断开smtp服务器的连接
+</code></pre><p>下面举例操作：</p>
+<pre><code>#!/usr/bin/env python
+#_*_ coding:UTF-8 _*_
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+
+HOST = &quot;smtp.126.com&quot;
+FROM = &quot;xuxiaomin123456@126.com&quot;
+TO = &quot;867550686@qq.com&quot;
+SUBJECT = u&quot;业务报表&quot;
+
+
+def addimg(src,imgid):
+fp = file(src,&apos;rb&apos;)
+msgImage = MIMEImage(fp.read(), _subtype=&apos;png&apos;)
+fp.close()
+msgImage.add_header(&apos;Content-ID&apos;, imgid)
+return msgImage
+msg = MIMEMultipart(&apos;related&apos;)
+msgtext = MIMEText(&quot;&quot;&quot;
+&lt;table width=&quot;600&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;4&quot;&gt;
+&lt;tr bgcolor=&quot;#CECFAD&quot; height=&quot;20&quot; style=&quot;font-size:14px&quot;&gt;
+&lt;td colspan=2&gt; 性能报告&lt;a herf=&quot;www.baidu.com&quot;&gt;更多&gt;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor=&quot;#EFEBDE&quot; height=&quot;100&quot; style=&quot;font-size:13px&quot;&gt;
+&lt;td&gt;
+&lt;img src=&quot;cid:io&quot;&gt;&lt;/td&gt;&lt;td&gt;
+&lt;img src=&quot;cid:key_hit&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr bgcolor=&quot;#EFEBDE&quot; height=&quot;100&quot; style=&quot;font-size:13px&quot;&gt;
+&lt;td&gt;
+&lt;img src=&quot;cid:men&quot;&gt;&lt;/td&gt;&lt;td&gt;
+&lt;img src=&quot;cid:swap&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&quot;&quot;&quot;,&quot;html&quot;,&quot;utf-8&quot;)
+
+msg.attach(msgtext)
+msg.attach(addimg(&quot;img/bytes_io.png&quot;,&quot;io&quot;))
+msg.attach(addimg(&quot;img/myisam_key_hit.png&quot;,&quot;key_hit&quot;))
+msg.attach(addimg(&quot;img/os_mem.png&quot;,&quot;men&quot;))
+msg.attach(addimg(&quot;img/os_swap.png&quot;,&quot;swap&quot;))
+msg[&apos;Subject&apos;] = SUBJECT
+msg[&apos;To&apos;] = TO
+try:
+server = smtplib.SMTP()
+server.connect(HOST,&quot;25&quot;)
+server.starttls()
+server.login(&quot;xuxiaomin123456@126.com&quot;,&quot;xxx&quot;)
+server.sendmail(FROM, TO, msg.as_string())
+server.quit()
+print &quot;发送成功&quot;
+except Exception, e:
+print &quot;发送失败：&quot; +str(e)
+</code></pre><p>[root@web ~]# python smtp2.py<br>发送成功</p>
 
             </div>
         </div>
@@ -335,7 +390,7 @@
         <div class="card">
             <div class="card-content">
                 <!-- Duoshuo Comment BEGIN -->
-                <div class="ds-thread" data-thread-key="2016/12/04/Python基础语法/" data-title="Python解释器" data-url="https://github.com/x-future/x-future.github.io/2016/12/04/Python基础语法/"></div>
+                <div class="ds-thread" data-thread-key="2016/12/28/Python发送邮件/" data-title="Python自动化运维之邮件模块" data-url="https://github.com/x-future/x-future.github.io/2016/12/28/Python发送邮件/"></div>
 
                 <script type="text/javascript">
                     console.log(document.querySelector('.ds-thread'));
